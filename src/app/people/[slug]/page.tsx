@@ -26,21 +26,26 @@ export default async function Person({
       <div className="profile-grid">
         <div className="person-initials large" aria-hidden="true">
           {p.initials}
-          <span>CEID / LEADERSHIP</span>
+          <span>CEID / PEOPLE</span>
         </div>
         <div>
-          <Eyebrow>{p.role}</Eyebrow>
+          {p.role && <Eyebrow>{p.role}</Eyebrow>}
           <h1>{p.name}</h1>
-          <p className="lead">{p.description}</p>
-          <p>{p.responsibility}</p>
-          <h3>
-            Areas of {p.slug === "nafiul-muid" ? "interest" : "responsibility"}
-          </h3>
-          <div className="tags">
-            {p.areas.map((a) => (
-              <span key={a}>{a}</span>
-            ))}
-          </div>
+          {p.description && <p className="lead">{p.description}</p>}
+          {p.responsibility && <p>{p.responsibility}</p>}
+          {p.areas.length > 0 && (
+            <>
+              <h3>
+                Areas of{" "}
+                {p.slug === "nafiul-muid" ? "interest" : "responsibility"}
+              </h3>
+              <div className="tags">
+                {p.areas.map((a) => (
+                  <span key={a}>{a}</span>
+                ))}
+              </div>
+            </>
+          )}
           <Button href="/contact">Get in touch</Button>
         </div>
       </div>

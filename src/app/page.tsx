@@ -169,25 +169,29 @@ export default function Home() {
           </div>
         </div>
         <div className="featured-grid">
-          {[research[0], research[6], research[10]].map((r) => (
-            <Link
-              className="featured-card"
-              key={r.slug}
-              href={`/research/${r.slug}`}
-            >
-              <Photo name={r.image} alt={r.theme} />
-              <div>
-                <span className="mini-label">
-                  {r.status} / {r.theme}
-                </span>
-                <h3>{r.title}</h3>
-                <p>{r.summary}</p>
-                <span className="text-link">
-                  Read overview <ArrowUpRight size={17} />
-                </span>
-              </div>
-            </Link>
-          ))}
+          {["Published", "Completed", "Ongoing"]
+            .flatMap((status) =>
+              research.filter((r) => r.status === status).slice(0, 1),
+            )
+            .map((r) => (
+              <Link
+                className="featured-card"
+                key={r.slug}
+                href={`/research/${r.slug}`}
+              >
+                <Photo name={r.image} alt={r.theme} />
+                <div>
+                  <span className="mini-label">
+                    {r.status} / {r.theme}
+                  </span>
+                  <h3>{r.title}</h3>
+                  <p>{r.summary}</p>
+                  <span className="text-link">
+                    Read overview <ArrowUpRight size={17} />
+                  </span>
+                </div>
+              </Link>
+            ))}
         </div>
       </section>
       <section className="learning-home container">

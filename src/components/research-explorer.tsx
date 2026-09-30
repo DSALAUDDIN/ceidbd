@@ -1,114 +1,94 @@
 "use client";
 import { useState } from "react";
-import { Search, ArrowUpRight } from "lucide-react";
+import {
+  Search,
+  ArrowRight,
+  BookOpen,
+  CircleCheck,
+  Clock3,
+} from "lucide-react";
 import Link from "next/link";
 import { research } from "@/lib/data";
-const statuses = [
-  "All",
-  "Published",
-  "Ongoing",
-  "Completed",
-  "Research Briefs",
+const categories = [
+  {
+    title: "Published",
+    icon: BookOpen,
+    description:
+      "Our published research contributes to academic knowledge and public debates on critical social and development issues.",
+  },
+  {
+    title: "Completed",
+    icon: CircleCheck,
+    description:
+      "Our completed research examines inequality, livelihoods and wellbeing, contributing evidence for more inclusive development.",
+  },
+  {
+    title: "Ongoing",
+    icon: Clock3,
+    description:
+      "Our ongoing research explores emerging issues and critical challenges, with the aim of generating evidence to support more inclusive and sustainable futures.",
+  },
 ];
 export function ResearchExplorer() {
-  const [status, setStatus] = useState("All");
   const [query, setQuery] = useState("");
-  const [theme, setTheme] = useState("All themes");
-  const results = research.filter(
-    (r) =>
-      (status === "All" || r.status === status) &&
-      (theme === "All themes" || r.theme === theme) &&
-      `${r.title} ${r.summary} ${r.theme}`
-        .toLowerCase()
-        .includes(query.toLowerCase()),
+  const results = research.filter((item) =>
+    `${item.title} ${item.theme} ${item.status}`
+      .toLowerCase()
+      .includes(query.trim().toLowerCase()),
   );
   return (
     <>
-      <div className="search-row">
+      <div className="container research-search">
         <label className="search">
-          <Search size={19} />
+          <Search size={19} aria-hidden="true" />
           <input
             type="search"
             aria-label="Search research"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
             placeholder="Search research, themes or keywords…"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
           />
         </label>
-        <select
-          aria-label="Filter by research theme"
-          value={theme}
-          onChange={(e) => setTheme(e.target.value)}
-        >
-          {[
-            "All themes",
-            "Inclusive Health",
-            "Inclusive Education",
-            "Community Wellbeing",
-            "Social Development",
-          ].map((t) => (
-            <option key={t}>{t}</option>
-          ))}
-        </select>
+        <p className="result-count" aria-live="polite">
+          {results.length} research{" "}
+          {results.length === 1 ? "project" : "projects"}
+        </p>
       </div>
-      <div className="filters" role="group" aria-label="Research status">
-        {statuses.map((s) => (
-          <button
-            key={s}
-            aria-pressed={status === s}
-            className={status === s ? "active" : ""}
-            onClick={() => setStatus(s)}
+      {categories.map(({ title, icon: Icon, description }) => {
+        const items = results.filter((item) => item.status === title);
+        if (!items.length) return null;
+        return (
+          <section
+            className="research-category"
+            key={title}
+            aria-labelledby={`research-${title.toLowerCase()}`}
           >
-            {s}
-          </button>
-        ))}
-      </div>
-      <div className="result-count" aria-live="polite">
-        {results.length}{" "}
-        {results.length === 1 ? "research overview" : "research overviews"}
-      </div>
-      <div className="research-grid">
-        {results.map((r, i) => (
-          <Link
-            className="research-card"
-            key={r.slug}
-            href={`/research/${r.slug}`}
-          >
-            <div className="card-top">
-              <span className={`badge ${r.status === "Ongoing" ? "gold" : ""}`}>
-                {r.status === "Research Briefs" ? "Research brief" : r.status}
-              </span>
-              <ArrowUpRight size={20} />
+            <div className="container research-category-grid">
+              <div className="research-category-intro">
+                <Icon size={30} strokeWidth={1.5} aria-hidden="true" />
+                <h2 id={`research-${title.toLowerCase()}`}>{title}</h2>
+                <p>{description}</p>
+              </div>
+              <ol className="research-list">
+                {items.map((item) => (
+                  <li key={item.slug}>
+                    <Link href={`/research/${item.slug}`}>
+                      <span>{item.title}</span>
+                      <ArrowRight size={19} aria-hidden="true" />
+                    </Link>
+                  </li>
+                ))}
+              </ol>
             </div>
-            <span className="research-number">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <h3>{r.title}</h3>
-            <p>{r.summary}</p>
-            <div className="card-bottom">
-              {r.theme}
-              <span>Read overview →</span>
-            </div>
-          </Link>
-        ))}
-      </div>
+          </section>
+        );
+      })}
       {results.length === 0 && (
-        <div className="empty-state">
-          <Search size={32} />
-          <h3>No research to show here yet.</h3>
-          <p>
-            {status === "Completed"
-              ? "Completed studies will appear here when their details are available."
-              : "Try another keyword, theme or status."}
-          </p>
-          <button
-            className="button"
-            onClick={() => {
-              setQuery("");
-              setTheme("All themes");
-              setStatus("All");
-            }}
-          >
+        <div className="container empty-state">
+          <Search size={32} aria-hidden="true" />
+          <h2>No matching research</h2>
+          <p>Try another keyword or view all research.</p>
+          <button className="button" onClick={() => setQuery("")}>
             View all research
           </button>
         </div>

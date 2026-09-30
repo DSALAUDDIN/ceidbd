@@ -1,33 +1,16 @@
-import { PageHero, Eyebrow, Invitation } from "@/components/ui";
+import { PageHero, Invitation } from "@/components/ui";
 import { ResearchExplorer } from "@/components/research-explorer";
-export const metadata = { title: "Research" };
+export const metadata = { title: "Our Research" };
 export default function Research() {
   return (
     <>
       <PageHero
         label="Research"
-        title="Research for real change."
-        description="Evidence to understand social challenges, inform practice and contribute to more equitable, people-centred solutions."
+        title="Our Research"
+        description="Our research explores social, environmental and development issues affecting communities in Bangladesh and beyond. Through rigorous, contextual and people-centred research, we generate evidence to inform policy, practice and meaningful social change."
         image="community"
       />
-      <section className="section container">
-        <div className="section-heading">
-          <div>
-            <Eyebrow>Our research portfolio</Eyebrow>
-            <h2>
-              Explore our questions.
-              <br />
-              <em>Discover new perspectives.</em>
-            </h2>
-          </div>
-          <p>
-            Browse research themes and project overviews. Full publication
-            references and research outputs will be added as they become
-            available.
-          </p>
-        </div>
-        <ResearchExplorer />
-      </section>
+      <ResearchExplorer />
       <Invitation />
     </>
   );
