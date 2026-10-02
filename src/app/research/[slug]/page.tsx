@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { research } from "@/lib/data";
-import { Eyebrow, Photo, TextLink, Button } from "@/components/ui";
+import { Eyebrow, TextLink, Button } from "@/components/ui";
 export function generateStaticParams() {
   return research.map((r) => ({ slug: r.slug }));
 }
@@ -39,11 +39,6 @@ export default async function ResearchDetail({
         </div>
       </section>
       <section className="container detail-content">
-        <Photo
-          name={r.image}
-          alt="Illustrative community research and engagement"
-          priority
-        />
         <div className="editorial-grid">
           <div>
             <Eyebrow>Research overview</Eyebrow>

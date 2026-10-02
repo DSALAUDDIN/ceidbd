@@ -13,7 +13,7 @@ export default function About() {
         label="About CEID"
         title="A shared belief in a fairer future."
         description="Independent thinking. Respectful engagement. Research that contributes to more equitable and inclusive societies."
-        image="wellbeing"
+        image="about-fieldwork"
       />
       <section className="section container editorial-grid">
         <div>

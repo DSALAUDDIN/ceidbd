@@ -49,10 +49,13 @@ export default function Ethics() {
           <div className="notice">
             <h3>Ethics review</h3>
             <p>
-              CEID does not currently offer institutional research ethics
-              approval through this website. Enquiries about study review should
-              be discussed with the relevant recognised institution.
+              CEID’s Research Ethics Committee reviews research involving human
+              participants to support ethical, responsible and
+              participant-centred research practice.
             </p>
+            <TextLink href="/opportunities/ethics-review">
+              Apply for ethics review
+            </TextLink>
           </div>
         </div>
       </section>

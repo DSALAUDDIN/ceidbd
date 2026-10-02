@@ -10,7 +10,7 @@ export function ContactForm() {
         e.preventDefault();
         const d = new FormData(e.currentTarget);
         const body = `Name: ${d.get("name")}\nEmail: ${d.get("email")}\nOrganisation: ${d.get("organisation") || "Not specified"}\n\n${d.get("message")}`;
-        window.location.href = `mailto:info@ceid.org?subject=${encodeURIComponent(`CEID enquiry: ${d.get("subject")}`)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:info@ceidbd.com?subject=${encodeURIComponent(`CEID enquiry: ${d.get("subject")}`)}&body=${encodeURIComponent(body)}`;
         setPrepared(true);
       }}
     >
@@ -90,7 +90,7 @@ export function ContactForm() {
           <p>
             Your email draft is ready to open. If your email app did not open,
             send your enquiry directly to{" "}
-            <a href="mailto:info@ceid.org">info@ceid.org</a>. No message has
+            <a href="mailto:info@ceidbd.com">info@ceidbd.com</a>. No message has
             been sent by this website.
           </p>
         </div>

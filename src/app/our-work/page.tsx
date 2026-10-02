@@ -10,7 +10,7 @@ export default function Work() {
         label="Our work"
         title="Building inclusive futures."
         description="Four connected areas. One shared purpose: to understand inequalities and contribute to practical, inclusive and sustainable change."
-        image="learning"
+        image="four-pillars"
       />
       <section className="section container" id="focus-areas">
         <Eyebrow>Our focus areas</Eyebrow>

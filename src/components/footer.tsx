@@ -41,8 +41,8 @@ export function Footer() {
             <br />
             We’d love to hear yours.
           </p>
-          <Link className="footer-email" href="mailto:info@ceid.org">
-            info@ceid.org <ArrowUpRight size={16} />
+          <Link className="footer-email" href="mailto:info@ceidbd.com">
+            info@ceidbd.com <ArrowUpRight size={16} />
           </Link>
         </div>
       </div>
@@ -51,6 +51,7 @@ export function Footer() {
         <div>
           <Link href="/ethics">Research ethics</Link>
           <Link href="/privacy">Privacy</Link>
+          <Link href="/admin">Admin</Link>
           <a href="#top">Back to top ↑</a>
         </div>
       </div>

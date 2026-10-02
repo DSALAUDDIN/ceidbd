@@ -3,3 +3,7 @@ node_modules/
 out/
 .env*
 *.tsbuildinfo
+
+.private-mail/
+
+.env.mail-install.tmp

@@ -8,7 +8,7 @@ export default function Research() {
         label="Research"
         title="Our Research"
         description="Our research explores social, environmental and development issues affecting communities in Bangladesh and beyond. Through rigorous, contextual and people-centred research, we generate evidence to inform policy, practice and meaningful social change."
-        image="community"
+        image="research-illustration"
       />
       <ResearchExplorer />
       <Invitation />

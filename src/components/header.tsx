@@ -39,7 +39,7 @@ export function Header() {
             aria-label="CEID home"
             onClick={() => setOpen(false)}
           >
-            <Image src="/images/logo.png" width={50} height={49} alt="" />
+            <Image src="/images/logo.png" width={60} height={59} alt="" />
             <span>
               <strong>CEID</strong>
               <small>

@@ -5,7 +5,7 @@ export const focusAreas = [
     tagline: "Health equity that reaches everyone.",
     description:
       "We examine access to healthcare, mental wellbeing, health inequalities and the social conditions that shape healthier lives and communities.",
-    image: "community",
+    image: "inclusive-health",
     topics: [
       "Health equity & access",
       "Mental health & wellbeing",
@@ -21,7 +21,7 @@ export const focusAreas = [
     tagline: "Learning opportunities without exclusion.",
     description:
       "We focus on equitable access to education, learning opportunities, skills development and the barriers that prevent people from reaching their potential.",
-    image: "learning",
+    image: "inclusive-education",
     topics: [
       "Educational access & participation",
       "Disability inclusion",
@@ -74,7 +74,7 @@ export const research = [
     theme: "Inclusive Health",
     summary:
       "Exploring the relationships between climate displacement, livelihood insecurity and psychological wellbeing in riverine communities.",
-    image: "community",
+    image: "climate-displacement",
   },
   {
     slug: "sustainable-rural-development",
@@ -204,7 +204,7 @@ export const research = [
     theme: "Community Wellbeing",
     summary:
       "Exploring employment precarity, provider responsibilities and mental distress among young married men.",
-    image: "wellbeing",
+    image: "employment-precarity",
   },
   {
     slug: "ageing-migrant-wellbeing",
@@ -328,7 +328,7 @@ export const learning = [
     eyebrow: "Hands-on learning",
     description:
       "Short, focused sessions that combine clear explanation, practical exercises and open discussion.",
-    image: "workshop",
+    image: "research-workshop",
     topics: [
       "Qualitative research methods",
       "Quantitative research methods",
@@ -346,7 +346,7 @@ export const learning = [
     eyebrow: "Build your research practice",
     description:
       "Structured learning for students, early-career researchers and professionals developing their research skills.",
-    image: "learning",
+    image: "research-training",
     topics: [
       "Research methodology",
       "Qualitative data analysis",
@@ -363,7 +363,7 @@ export const learning = [
     eyebrow: "A wider conversation",
     description:
       "Conversations with researchers and practitioners on emerging social issues and practical knowledge.",
-    image: "community",
+    image: "research-webinar",
     topics: [
       "Research methods",
       "Equity and social inclusion",
@@ -379,7 +379,7 @@ export const learning = [
     eyebrow: "Knowledge you can use",
     description:
       "A developing collection of practical tools, guides and learning materials for research and practice.",
-    image: "workshop",
+    image: "research-resources",
     topics: [
       "Research guides",
       "Methodology notes",

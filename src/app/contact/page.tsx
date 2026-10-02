@@ -22,10 +22,10 @@ export default function Contact() {
             Connect with CEID to explore ideas, partnerships and opportunities
             for inclusive change.
           </p>
-          <a className="contact-line" href="mailto:info@ceid.org">
+          <a className="contact-line" href="mailto:info@ceidbd.com">
             <Mail size={22} />
             <span>
-              <small>Email us</small>info@ceid.org
+              <small>Email us</small>info@ceidbd.com
             </span>
             <ArrowUpRight size={18} />
           </a>
@@ -35,7 +35,7 @@ export default function Contact() {
               <small>Based in</small>Dhaka, Bangladesh
             </span>
           </div>
-          <Photo name="wellbeing" alt="A community conversation" />
+          <Photo name="contact-school" alt="Children outside a primary school" />
         </div>
         <ContactForm />
       </section>

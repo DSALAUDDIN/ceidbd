@@ -35,8 +35,8 @@ export default function Home() {
           </div>
           <div className="hero-visual">
             <Photo
-              name="community"
-              alt="Researchers listening to community members in an outdoor discussion"
+              name="home-sdg"
+              alt="Children holding Sustainable Development Goal signs"
               priority
             />
             <div className="image-corner">
@@ -127,8 +127,8 @@ export default function Home() {
       <section className="about-home">
         <div className="container about-grid">
           <Photo
-            name="wellbeing"
-            alt="Women and researchers sharing perspectives in a community discussion"
+            name="community-riverside"
+            alt="Community discussion beside a river"
           />
           <div>
             <Eyebrow>Who we are</Eyebrow>
@@ -210,8 +210,8 @@ export default function Home() {
           <Button href="/learning">Discover learning opportunities</Button>
         </div>
         <Photo
-          name="learning"
-          alt="An inclusive group of learners working together around a table"
+          name="research-training"
+          alt="Research training session with a presenter and participants"
         />
       </section>
       <Invitation />
